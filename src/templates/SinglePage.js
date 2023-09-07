@@ -1,28 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import ACFRenderFlexibleContent from "../_includes/ACFRenderFlexibleContent";
 import ACFRenderSingleComponent from "../_includes/ACFRenderSingleComponent";
+import ACFRenderFlexibleContent from "../_includes/ACFRenderFlexibleContent";
 
 function SinglePage() {
-    const { id } = useParams();
-    const [pageContent, setPageContent] = useState('');
-    const apiUrl = `http://headless-wp.test/wp-json/wp/v2/pages/${id}`;
+    const { slug } = useParams(); // Get the slug from the route
+
+    const [pageData, setPageData] = useState({});
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
+        // Use the slug to fetch page data
+        const apiUrl = `http://headless-wp.test/wp-json/custom/v1/pages/${slug}`;
         axios.get(apiUrl)
             .then(response => {
-                setPageContent(response.data.content.rendered);
+                const data = response.data;
+                setPageData(data);
             })
             .catch(error => {
-                console.error('Error fetching page content:', error);
+                console.error('Error fetching page data:', error);
+            })
+            .finally(() => {
+                setLoading(false); // Set loading to false when the data is fetched
             });
-    }, [id]);
+    }, [slug]);
 
     return (
         <div>
-            <ACFRenderSingleComponent pageId={id} componentName={'component_hero'} ></ACFRenderSingleComponent>
-            <ACFRenderFlexibleContent pageId={id}></ACFRenderFlexibleContent>
-            <div dangerouslySetInnerHTML={{ __html: pageContent }} />
+            {loading ? (
+                <p>Loading...</p>
+            ) : (
+                <>
+                    <ACFRenderSingleComponent pageId={pageData.id} componentName={'component_hero'} />
+                    <ACFRenderFlexibleContent pageId={pageData.id} />
+                </>
+            )}
         </div>
     );
 }
