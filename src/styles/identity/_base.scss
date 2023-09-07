@@ -1,0 +1,42 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1em;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: $site-background;
+  overflow-x: hidden; // Prevent page from scrolling horizontally.
+  overflow-y: scroll; // Prevent page layout from jumping.
+}
+
+body {
+  color: $fallback-color;
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  font-family: $body-font-family;
+  line-height: $body-line-height;
+  overflow-x: hidden;
+}
+ol {
+  margin-left: 0;
+}
+ul {
+  list-style: none;
+  li {
+    padding-left: 0;
+    position: relative;
+  }
+}
+table {
+  border-collapse: collapse;
+}
+small{
+  font-size: 80%;
+}

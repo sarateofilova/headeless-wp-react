@@ -1,0 +1,17 @@
+@use "sass:math";
+
+/* Convert pixels to rem, assuming 16px base.
+Based on https://github.com/deidee/destijl/blob/master/scss/_functions.scss
+ */
+@function rem($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @if (math.div($pixels, $context) == 0) {
+    @return 0;
+  }
+  @return math.div($pixels, $context) * 1rem;
+}

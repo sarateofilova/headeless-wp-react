@@ -1,0 +1,88 @@
+
+%ratio {
+  display: block;
+  //overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: auto;
+
+  &::before {
+    content: '';
+    display: block;
+  }
+
+  @each $key, $ratio in $aspect-ratios {
+    &--#{$key} {
+      &::before {
+        padding-top: calc(#{$ratio} * 100% );
+      }
+    }
+  }
+
+  > :first-child:not(span),
+  > iframe,
+  > video,
+  > img{
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    vertical-align: bottom;
+    width: 100%;
+  }
+
+  &--auto {
+    &::before {
+      display: none;
+    }
+
+    > :first-child {
+      height: auto;
+      position: relative;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  @each $key, $ratio in $aspect-ratios {
+    %ratio-md--#{$key} {
+      &::before {
+        padding-top: calc(#{$ratio} * 100% );
+      }
+    }
+  }
+
+  %ratio-md--auto {
+    &::before {
+      display: none;
+    }
+
+    > :first-child {
+      height: auto;
+      position: relative;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  @each $key, $ratio in $aspect-ratios {
+    %ratio-lg--#{$key} {
+      &::before {
+        padding-top: calc(#{$ratio} * 100% );
+      }
+    }
+  }
+
+  %ratio-lg--auto {
+    &::before {
+      display: none;
+    }
+
+    > :first-child {
+      height: auto;
+      position: relative;
+    }
+  }
+}

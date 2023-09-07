@@ -1,0 +1,83 @@
+h1,
+.h1 {
+  font-size: $heading-mobile-1-size;
+  line-height: $heading-mobile-1-line-height;
+  font-weight: $heading-1-weight;
+  font-family: $heading-1-family;
+  color: $heading-font-color;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $heading-1-size;
+    line-height: $heading-1-line-height;
+  }
+}
+
+h2,
+.h2 {
+  font-size: $heading-mobile-2-size;
+  line-height: $heading-mobile-2-line-height;
+  font-weight: $heading-2-weight;
+  font-family: $heading-2-family;
+  color: $heading-font-color;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $heading-2-size;
+    line-height: $heading-2-line-height;
+  }
+}
+
+h3,
+.h3 {
+  font-size: $heading-mobile-3-size;
+  line-height: $heading-mobile-3-line-height;
+  font-weight: $heading-3-weight;
+  font-family: $heading-3-family;
+  color: $heading-font-color;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $heading-3-size;
+    line-height: $heading-3-line-height;
+  }
+}
+
+h4,
+.h4 {
+  font-size: $heading-mobile-4-size;
+  line-height: $heading-mobile-4-line-height;
+  font-weight: $heading-4-weight;
+  font-family: $heading-4-family;
+  color: $heading-font-color;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $heading-4-size;
+    line-height: $heading-4-line-height;
+  }
+}
+
+h5,
+.h5 {
+  font-size: $heading-mobile-5-size;
+  line-height: $heading-mobile-5-line-height;
+  font-weight: $heading-5-weight;
+  font-family: $heading-5-family;
+  color: $heading-font-color;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $heading-5-size;
+    line-height: $heading-5-line-height;
+  }
+}
+
+h6,
+.h6 {
+  font-size: $heading-mobile-6-size;
+  line-height: $heading-mobile-6-line-height;
+  font-weight: $heading-6-weight;
+  font-family: $heading-6-family;
+  color: $heading-font-color;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $heading-6-size;
+    line-height: $heading-6-line-height;
+  }
+}

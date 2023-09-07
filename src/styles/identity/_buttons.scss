@@ -1,0 +1,37 @@
+button,
+.button,
+a.button{
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  transition: all $button-transition-ease $button-transition-time;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  background-color: $button-background;
+  color: $button-color;
+  font-weight: $button-weight;
+  line-height: $button-line-height;
+  padding: $button-padding;
+  border: $button-border;
+  border-radius: $button-border-radius;
+
+  &.hover,
+  &:hover {
+    background-color: $button-background-hover;
+    color: $button-color-hover;
+    border-color: $button-border-color-hover;
+  }
+}
+
+a{
+  color: $fallback-color;
+  text-decoration: underline;
+  transition: all $button-transition-ease $button-transition-time;
+
+  &.hover,
+  &:hover{
+    color: $black;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,28 @@
+/* Convert pixels to em, assuming 16px base.
+Taken from https://github.com/deidee/destijl/blob/master/scss/_functions.scss
+ */
+@function em($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1em;
+}
+
+/* Convert pixels to rem, assuming 16px base.
+Taken from https://github.com/deidee/destijl/blob/master/scss/_functions.scss
+ */
+@function rem($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @if ($pixels / $context == 0) {
+    @return 0;
+  }
+  @return $pixels / $context * 1rem;
+}

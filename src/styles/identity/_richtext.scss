@@ -1,0 +1,32 @@
+.rich-text {
+  padding: rem(80) 0;
+
+  & > * {
+    margin-bottom: rem(24);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: rem(16);
+
+    &.alignleft{
+      float: left;
+      margin: 0 rem(16) rem(16) 0;
+    }
+
+    &.alignright{
+      float: right;
+      margin: 0  0 rem(16) rem(16);
+    }
+  }
+
+  a {
+    color: $black;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+  }
+}

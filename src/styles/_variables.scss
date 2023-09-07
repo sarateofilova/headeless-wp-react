@@ -1,0 +1,187 @@
+@use "sass:math";
+
+// # Colors
+$white: #fff;
+$black: #000;
+$fallback-color: $black;
+$fallback-color-light: rgba($fallback-color, 0.24);
+$site-background: $white;
+
+// Colors
+$primary-neutral:   $fallback-color!default;
+$secondary-neutral: $fallback-color!default;
+
+// Alerts
+$alert-error:       $fallback-color!default;
+$alert-confirmed:   $fallback-color!default;
+
+// Form Validation
+$error-color:       $fallback-color!default;
+$correct-color:     $fallback-color!default;
+
+// # Fonts
+$body-font-family: 'Arial', sans-serif;
+$body-font-size: rem(16);
+$body-font-weight: 400;
+$body-line-height: rem(24);
+$body-font-color: $fallback-color;
+
+// # Headings
+$heading-font-family: 'Arial', sans-serif;
+$heading-font-weight: 700;
+$heading-font-color: $fallback-color;
+
+$heading-1-size: rem(48);
+$heading-1-line-height: rem(56);
+$heading-mobile-1-size: rem(28);
+$heading-mobile-1-line-height: rem(32);
+$heading-1-weight: $heading-font-weight;
+$heading-1-family: $heading-font-family;
+
+$heading-2-size: rem(40);
+$heading-2-line-height: rem(48);
+$heading-mobile-2-size: rem(24);
+$heading-mobile-2-line-height: rem(32);
+$heading-2-weight: $heading-font-weight;
+$heading-2-family: $heading-font-family;
+
+$heading-3-size: rem(32);
+$heading-3-line-height: rem(40);
+$heading-mobile-3-size: rem(24);
+$heading-mobile-3-line-height: rem(32);
+$heading-3-weight: $heading-font-weight;
+$heading-3-family: $heading-font-family;
+
+$heading-4-size: rem(24);
+$heading-4-line-height: rem(32);
+$heading-mobile-4-size: rem(20);
+$heading-mobile-4-line-height: rem(32);
+$heading-4-weight: $heading-font-weight;
+$heading-4-family: $heading-font-family;
+
+$heading-5-size: rem(20);
+$heading-5-line-height: rem(28);
+$heading-mobile-5-size: rem(16);
+$heading-mobile-5-line-height: rem(24);
+$heading-5-weight: $heading-font-weight;
+$heading-5-family: $heading-font-family;
+
+$heading-6-size: rem(20);
+$heading-6-line-height: rem(32);
+$heading-mobile-6-size: rem(16);
+$heading-mobile-6-line-height: rem(24);
+$heading-6-weight: 500;
+$heading-6-family: $heading-font-family;
+
+// Buttons
+$button-background: $fallback-color-light!default;
+$button-weight: 700!default;
+$button-line-height: rem(24)!default;
+$button-font-size: rem(16)!default;
+$button-font-size: rem(16)!default;
+$button-padding: rem(8) rem(40)!default;
+$button-border: rem(1) solid $fallback-color-light!default;
+$button-border-radius: rem(2)!default;
+$button-color: $fallback-color!default;
+$button-color-hover: $fallback-color!default;
+$button-background-hover: $fallback-color-light!default;
+$button-border-color-hover: $fallback-color-light!default;
+
+// Forms
+$input-background: $fallback-color-light!default;
+$input-height: rem(40)!default;
+$input-text-indent: rem(16)!default;
+$input-font-size: rem(16)!default;
+$input-line-height: rem(16)!default;
+$input-border-radius: rem(0)!default;
+$input-border: rem(1) solid $black!default;
+$input-margin-bottom: rem(16)!default;
+
+//$select-dropdown-image: "../files/images/chevron-down.png"!default;
+$select-dropdown-image-position-x: calc(100% - 16px)!default;
+$select-dropdown-image-position-y: 50%!default;
+$select-dropdown-image-size: rem(16)!default;
+$select-dropdown-padding-right: rem(32)!default;
+
+$textarea-padding: rem(16)!default;
+$textarea-min-height: rem(156)!default;
+$textarea-border: $input-border;
+$textarea-border-radius: $input-border-radius;
+
+$input-radio-button-background: $fallback-color-light!default;
+$input-radio-button-height: rem(20)!default;
+$input-radio-button-width: rem(20)!default;
+$input-radio-button-border-radius: 100%!default;
+$input-radio-button-border-checked: "data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='4' fill='white'/%3E%3C/svg%3E"!default;
+
+$input-checkbox-background: $fallback-color-light!default;
+$input-checkbox-height: rem(20)!default;
+$input-checkbox-width: rem(20)!default;
+$input-checkbox-border-radius: 100%!default;
+$input-checkbox-checked: "data:image/svg+xml,%3Csvg width='12' height='11' viewBox='0 0 12 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.0541 0.658182C10.4124 0.237963 10.9935 0.237963 11.3519 0.658182C11.7102 1.0784 11.7102 1.75971 11.3519 2.17993L4.92951 9.71051C4.74868 9.92254 4.51116 10.0276 4.27416 10.0256C4.03591 10.0287 3.79683 9.9237 3.61505 9.71055L0.648666 6.2323C0.290288 5.81208 0.290288 5.13077 0.648666 4.71055C1.00704 4.29033 1.58809 4.29033 1.94647 4.71055L4.27226 7.43768L10.0541 0.658182Z' fill='white'/%3E%3C/svg%3E%0A"!default;
+$input-checkbox-checked-color: $fallback-color!default;
+$input-checkbox-margin-right: rem(12)!default;
+
+// # Transitions
+$button-transition-time: 1s;
+$button-transition-ease: ease-in-out;
+
+// # Spacing
+
+$spacer: rem(16)!default;
+$spacers: (
+        0: 0,
+        4: ($spacer * .25),
+        8: ($spacer * .5),
+        16: $spacer,
+        24: ($spacer * 1.5),
+        32: ($spacer * 2),
+        40: ($spacer * 2.5),
+        48: ($spacer * 3),
+        56: ($spacer * 3.5),
+        64: ($spacer * 4),
+        72: ($spacer * 4.5),
+        80: ($spacer * 5),
+        88: ($spacer * 5.5),
+        96: ($spacer * 6),
+        104: ($spacer * 6.5),
+        112: ($spacer * 7),
+        120: ($spacer * 7.5),
+        128: ($spacer * 8),
+        136: ($spacer * 8.5),
+        144: ($spacer * 9),
+);
+
+// # Breakpoints
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 768px,
+        md: 1024px,
+        lg: 1368px,
+        xl: 1920px
+) !default;
+
+// # Containers
+
+$container-max-widths: (
+        xs: 540px,
+        sm: 720px,
+        md: 920px,
+        lg: 1280px
+        //xl: none,
+) !default;
+
+// # Columns
+
+$grid-columns: 12;
+$grid-gutter-width: rem(20px);
+$gutters: $spacers !default;
+
+// Taken from https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss.
+$aspect-ratios: (
+        "1x1": 100%,
+        "4x3":  math.div(3,4),
+        "16x9":  math.div(9,16),
+        "16x10":  math.div(10,16),
+);
