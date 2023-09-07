@@ -7,6 +7,7 @@ import ACFRenderSingleComponent from "./_includes/ACFRenderSingleComponent";
 import ACFRenderFlexibleContent from './_includes/ACFRenderFlexibleContent';
 import SinglePage from './templates/SinglePage';
 import ComponentHeader from "./components/ComponentHeader/ComponentHeader";
+import PageArchive from "./templates/PageArchive";
 
 function App() {
 
@@ -43,10 +44,11 @@ function App() {
       <Router>
         <ComponentHeader />
         <Routes>
-          {/*<RoutedRoute path="/" element={<ACFRenderSingleComponent homepageId={homepageId} componentName={'component_hero'} />}/>*/}
-          <RoutedRoute path="/page/:id" element={<SinglePage />} />
-
-          {/*<RoutedRoute path="/" element={<ACFFlexibleContent pageId={homepageId}/>}/>*/}
+          // Show single page (detail page)
+          <RoutedRoute path="/page/:slug" element={<SinglePage />} />
+          // Show overview pages
+          <RoutedRoute path="/pages" element={<PageArchive />} />
+          // Homepage
           <RoutedRoute path="/" element={
             <>
               <ACFRenderSingleComponent pageId={homepageId} componentName={'component_hero'} />
@@ -54,23 +56,12 @@ function App() {
             </>
           } />
 
-          <RoutedRoute path="acf/:id"
-                       element={<GetCurrentPageId>
-                         {(currentPageId) => <ACFRenderFlexibleContent pageId={currentPageId} />}
-                       </GetCurrentPageId>}/>
+          {/*<RoutedRoute path="acf/:id"*/}
+          {/*             element={<GetCurrentPageId>*/}
+          {/*               {(currentPageId) => <ACFRenderFlexibleContent pageId={currentPageId} />}*/}
+          {/*             </GetCurrentPageId>}/>*/}
         </Routes>
       </Router>
   );
 }
-
-// function AcfPageWrapper(homepageId) {
-//
-//     return <ACFFlexibleContent pageId={homepageId}/>;
-// }
-
-// function ACFRenderSingleComponentWrapper(homepageId) {
-//     return <ACFRenderSingleComponent homepageId={homepageId} componentName={'component_hero'} />;
-// }
-
-
 export default App;
