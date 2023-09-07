@@ -10,6 +10,10 @@ wp-content/plugins
 wp-content/uploads/
 wp-content/wp-cache-config.php
 
+/.idea/
+/wp-content/themes/index.php
+/wp-content/index.php
+
 # Ignore configuration files
 wp-config.php
 wp-config-sample.php
