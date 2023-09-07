@@ -30,11 +30,10 @@ function ComponentHeader() {
                         <nav className="nav-menu">
                             <ul>
                                 {menuData.map(item => {
-                                    console.log(item); // Log the 'post_id' here
-
+                                    // console.log(item); // Log the 'post_id' here
                                     return (
                                         <li key={item.object_id}>
-                                            <Link to={`/page/${item.object_id}`}>{item.title}</Link>
+                                            <Link to={`/page/${item.slug}`}>{item.title}</Link>
                                         </li>
                                     );
                                 })}
