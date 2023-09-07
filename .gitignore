@@ -1,0 +1,37 @@
+# Ignore core WordPress files
+wp-admin/
+wp-includes/
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/plugins
+wp-content/uploads/
+wp-content/wp-cache-config.php
+
+# Ignore configuration files
+wp-config.php
+wp-config-sample.php
+
+.htaccess
+/index.php
+/wp-comments-post.php
+/license.txt
+/wp-activate.php
+/wp-blog-header.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+/readme.md
+/readme.html
+/wp-content/themes/twentytwentyone/
+/wp-content/themes/twentytwentythree/
+/wp-content/themes/twentytwentytwo/
+/react-frontend/

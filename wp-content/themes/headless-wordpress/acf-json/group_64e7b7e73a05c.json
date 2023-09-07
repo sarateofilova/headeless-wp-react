@@ -1,0 +1,126 @@
+{
+    "key": "group_64e7b7e73a05c",
+    "title": "Page Components",
+    "fields": [
+        {
+            "key": "field_64e7b7e7691a3",
+            "label": "Page Components",
+            "name": "page_components",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_64e7bddbe3e8e": {
+                    "key": "layout_64e7bddbe3e8e",
+                    "name": "component_cta",
+                    "label": "Component: CTA",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64e7bdebe3e90",
+                            "label": "Component: CTA",
+                            "name": "component_cta",
+                            "aria-label": "",
+                            "type": "component_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "field_group_key": "group_64e7bd97bbbe2",
+                            "repeatable": false,
+                            "min": 0,
+                            "max": 0,
+                            "rows_per_page": 20,
+                            "layout": "block",
+                            "button_label": "Add Row",
+                            "collapsed": "",
+                            "appearances": [],
+                            "sub_fields": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64e913529e453": {
+                    "key": "layout_64e913529e453",
+                    "name": "component_text",
+                    "label": "Component: Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64e9135c9e455",
+                            "label": "Component: Text",
+                            "name": "component_text",
+                            "aria-label": "",
+                            "type": "component_field",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "field_group_key": "group_64e912de73e6e",
+                            "layout": "block",
+                            "repeatable": 0,
+                            "button_label": "Add Row",
+                            "appearances": "",
+                            "min": 0,
+                            "max": 0,
+                            "rows_per_page": 20,
+                            "collapsed": "",
+                            "sub_fields": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "is_acf_component": 0,
+    "acf_component_defaults": {
+        "layout": "block",
+        "repeatable": "0",
+        "pagination": "0",
+        "rows_per_page": "20",
+        "min": "",
+        "max": "",
+        "button_label": "",
+        "appearances": ""
+    },
+    "modified": 1693001273
+}
