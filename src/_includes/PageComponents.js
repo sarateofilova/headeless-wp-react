@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ComponentHero from "../components/ComponentHero/ComponentHero";
+
 import ComponentCTA from '../components/ComponentCTA/ComponentCTA';
 import ComponentText from '../components/ComponentText';
-const ACFRenderFlexibleContent = ({ pageId }) => {
-    // console.log(pageId)
 
+const PageComponents = ({ pageId }) => {
     const [pageComponents, setPageComponents] = useState([]);
     useEffect(() => {
         axios.get(`http://headless-wp.test/wp-json/wp/v2/pages/${pageId}`)
@@ -51,4 +50,4 @@ const componentTypeToComponentMap = {
     // Add more entries for other component types...
 };
 
-export default ACFRenderFlexibleContent;
+export default PageComponents;
