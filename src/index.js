@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/main.scss'; // Import your stylesheet
 
+// Global variables
+window.baseUrl = 'http://headless-wp.test/';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
