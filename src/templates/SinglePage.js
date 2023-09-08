@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import ACFRenderSingleComponent from "../_includes/ACFRenderSingleComponent";
-import ACFRenderFlexibleContent from "../_includes/ACFRenderFlexibleContent";
+import PageComponent from "../_includes/PageComponent";
+import PageComponents from "../_includes/PageComponents";
 
 function SinglePage() {
     const { slug } = useParams(); // Get the slug from the route
@@ -32,8 +32,8 @@ function SinglePage() {
                 <p>Loading...</p>
             ) : (
                 <>
-                    <ACFRenderSingleComponent pageId={pageData.id} componentName={'component_hero'} />
-                    <ACFRenderFlexibleContent pageId={pageData.id} />
+                    <PageComponent pageId={pageData.id} componentName={'component_hero'} />
+                    <PageComponents pageId={pageData.id} />
                 </>
             )}
         </div>
