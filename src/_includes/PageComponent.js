@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import ComponentHero from "../components/ComponentHero/ComponentHero";
 import ComponentCTA from "../components/ComponentCTA/ComponentCTA";
 
@@ -9,7 +10,7 @@ const componentMap = {
     // Add more entries for other component types...
 };
 
-const ACFRenderSingleComponent = ({ pageId, componentName }) => {
+const PageComponent = ({ pageId, componentName }) => {
     const [acfData, setAcfData] = useState(null);
     const [error, setError] = useState(null);
     useEffect(() => {
@@ -41,4 +42,4 @@ const ACFRenderSingleComponent = ({ pageId, componentName }) => {
     return null;
 };
 
-export default ACFRenderSingleComponent;
+export default PageComponent;
