@@ -2,7 +2,6 @@ import React from 'react';
 import ResponsiveImage from "../../functions/ResponsiveImage/ResponsiveImage";
 
 const ComponentHero = ({ component_hero }) => {
-    // console.log(component_hero);
     const { title, image } = component_hero;
 
     return (
