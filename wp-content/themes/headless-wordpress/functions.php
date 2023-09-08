@@ -20,7 +20,7 @@ $dpi_includes = array(
 //    '/wp-translations.php',                // Adds Polylang translations
 );
 
-flush_rewrite_rules();
+//flush_rewrite_rules();
 foreach ( $dpi_includes as $file ) {
     $filepath = locate_template( '_includes' . $file );
     if ( ! $filepath ) {

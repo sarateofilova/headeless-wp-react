@@ -1,5 +1,5 @@
 <?php
-/* Template Name: React App Template */
+/* Template Name: Archive - Page */
 get_header();
 ?>
     <div id="root"></div>
