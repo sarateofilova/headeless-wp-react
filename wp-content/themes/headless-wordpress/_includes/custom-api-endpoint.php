@@ -24,6 +24,11 @@ function custom_rest_endpoints() {
         'methods' => 'GET',
         'callback' => 'custom_get_post_by_slug',
     ));
+    // Add a custom REST API route for media items
+    register_rest_route('custom/v1', '/media/(?P<id>\d+)', array(
+        'methods' => 'GET',
+        'callback' => 'custom_get_media_item',
+    ));
 }
 // Menus
 function custom_get_menu($request) {
@@ -63,7 +68,8 @@ function custom_get_page_by_slug($request) {
             'title' => get_the_title($page),
             'content' => apply_filters('the_content', $page->post_content),
             'slug' => $slug,
-            'template' => $template
+            'template' => $template,
+            'post_type' => 'page'
             // Add more fields as needed
         );
 
@@ -76,17 +82,20 @@ function custom_get_page_by_slug($request) {
 function custom_get_post_by_slug($request) {
     // Retrieve the slug from the request parameters
     $slug = $request['slug'];
-
     // Query the post based on the slug
     $post = get_page_by_path($slug, OBJECT, 'post');
 
     if ($post) {
+        $template = get_page_template_slug($post->ID);
+
         // Format the post data
         $formatted_post = array(
             'id' => $post->ID,
             'title' => get_the_title($post),
             'content' => apply_filters('the_content', $post->post_content),
             'slug' => $slug,
+            'template' => $template,
+            'post_type' => 'post',
             // Add more fields as needed
         );
 
@@ -104,4 +113,30 @@ function get_homepage_id() {
 function custom_get_homepage_id() {
     $homepage_id = get_homepage_id();
     return rest_ensure_response(array('homepage_id' => $homepage_id));
+}
+
+// Define the callback function to fetch a specific media item by ID
+function custom_get_media_item($request) {
+    $media_id = $request['id'];
+
+    // Check if the media item exists
+    $media_item = get_post($media_id);
+
+    if (!$media_item || $media_item->post_type !== 'attachment') {
+        return new WP_Error('media_not_found', 'Media item not found', array('status' => 404));
+    }
+
+    // Get the media item's data
+    $media_data = wp_get_attachment_metadata($media_id);
+    $media_url = wp_get_attachment_url($media_id);
+
+    // Construct the response data
+    $response = array(
+        'id' => $media_id,
+        'title' => get_the_title($media_id),
+        'url' => $media_url,
+        'metadata' => $media_data,
+    );
+
+    return rest_ensure_response($response);
 }
