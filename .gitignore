@@ -15,7 +15,7 @@ wp-content/wp-cache-config.php
 /wp-content/index.php
 
 # Ignore configuration files
-wp-config.php
+#wp-config.php
 wp-config-sample.php
 
 .htaccess
@@ -38,4 +38,4 @@ wp-config-sample.php
 /wp-content/themes/twentytwentyone/
 /wp-content/themes/twentytwentythree/
 /wp-content/themes/twentytwentytwo/
-/react-frontend/
+react-frontend/
