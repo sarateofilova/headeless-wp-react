@@ -13,12 +13,10 @@ function Posts() {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                // console.log(response.json())
                 return response.json();
             })
             .then(data => {
                 setPosts(data);
-                console.log('setPosts')
             })
             .catch(error => {
                 setError(error); // Set error state if fetch fails
@@ -26,7 +24,6 @@ function Posts() {
             });
     }, []); // Empty dependency array to run effect only once
 
-    console.log(posts);
 
     if (error) {
         return <div>Error: {error.message}</div>;

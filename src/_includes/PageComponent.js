@@ -3,10 +3,12 @@ import axios from 'axios';
 
 import ComponentHero from "../components/ComponentHero/ComponentHero";
 import ComponentCTA from "../components/ComponentCTA/ComponentCTA";
+import ComponentCards from "../components/ComponentCards/ComponentCards";
 
 const componentMap = {
     component_hero: ComponentHero,
-    component_cta: ComponentCTA
+    component_cta: ComponentCTA,
+    component_cards : ComponentCards
     // Add more entries for other component types...
 };
 
