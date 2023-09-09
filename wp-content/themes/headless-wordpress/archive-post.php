@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Overview pages */
+/* Template Name: Overview posts */
 get_header();
 ?>
     <div></div>
