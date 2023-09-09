@@ -12,7 +12,7 @@ function App() {
             <Routes>
                 {/* Homepage */}
                 <RoutedRoute path="/" element={<HomePage/>}/>
-                {/* Single page (detail page) */}
+                {/* Single page routing for Detail page, Overview page, custom templates pages */}
                 <RoutedRoute path="/:slug" element={<Single/>}/>
 
             </Routes>
