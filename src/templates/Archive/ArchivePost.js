@@ -41,11 +41,11 @@ function ArchivePost({pageId, pageSlug}) {
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-4">
-                                            <div key={post.id}>
+                                            <ul  key={post.id}>
                                                 <li>
-                                                    <Link to={`/${post.slug}`}>{post.title.rendered}</Link>
+                                                    <Link to={`/${post.slug}`} key={post.id} >{post.title.rendered}</Link>
                                                 </li>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
