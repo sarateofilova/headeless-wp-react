@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PageComponent from '../../_includes/PageComponent';
 import ComponentCards from "../../components/ComponentCards/ComponentCards";
 
-function ArchivePost({pageId}) {
+function ArchivePost({pageId, pageSlug}) {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -29,7 +29,7 @@ function ArchivePost({pageId}) {
             ) : (
                 <>
                     <PageComponent pageId={pageId} componentName={'component_hero'} />
-                    <ComponentCards postType={'posts'}/>
+                    <ComponentCards postType={'posts'} currentPageId={pageId} currentPageSlug={pageSlug}/>
                 </>
 
             )}
