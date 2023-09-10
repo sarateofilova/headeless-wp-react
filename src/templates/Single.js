@@ -24,7 +24,7 @@ function Single() {
                 setContentData(data);
             })
             .catch(error => {
-                console.error('Error fetching post data:', error);
+                // console.error('Error fetching post data:', error);
                 // If fetching posts data fails, try fetching pages data
                 axios
                     .get(pageApiUrl)
