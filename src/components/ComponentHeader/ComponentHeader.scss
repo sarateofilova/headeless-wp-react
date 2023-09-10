@@ -1,6 +1,7 @@
 .nav-menu {
-  ul {
     display: flex;
     justify-content: space-between;
-  }
+    .sub-menu {
+      padding-left: 8px;
+    }
 }
