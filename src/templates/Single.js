@@ -58,9 +58,9 @@ function Single() {
                                 return <SinglePost title={contentData.title} />;
                             case contentData.template === 'archive-page.php':
                                 // Handle other template cases here
-                                return <ArchivePage pageId={contentData.id}/>;
+                                return <ArchivePage pageId={contentData.id} pageSlug={contentData.slug}/>;
                             case contentData.template === 'archive-post.php' :
-                                return <ArchivePost pageId={contentData.id} />
+                                return <ArchivePost pageId={contentData.id} pageSlug={contentData.slug} />
                             default:
                                 return null;
                         }
